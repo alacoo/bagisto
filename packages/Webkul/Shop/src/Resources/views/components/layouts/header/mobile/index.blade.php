@@ -24,7 +24,7 @@
             <a
                 href="{{ route('shop.home.index') }}"
                 class="flex max-h-[30px] items-center"
-                aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
+                aria-label="{{ core()->getCurrentChannel()->logo_alt ?: config('app.name') }}"
             >
                 <img
                     class="block"
@@ -246,7 +246,7 @@
 
                 <x-slot:header>
                     <div class="flex items-center justify-between">
-                        <a href="{{ route('shop.home.index') }}">
+                        <a href="{{ route('shop.home.index') }}" aria-label="{{ core()->getCurrentChannel()->logo_alt ?: config('app.name') }}">
                             <img
                                 src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                                 alt="{{ core()->getCurrentChannel()->logo_alt ?: config('app.name') }}"

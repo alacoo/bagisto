@@ -11,7 +11,7 @@
 
         <a
             href="{{ route('shop.home.index') }}"
-            aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
+            aria-label="{{ core()->getCurrentChannel()->logo_alt ?: config('app.name') }}"
         >
             <img
                 src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
